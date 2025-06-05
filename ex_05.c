@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void remover(int* vetor, int* tamanho, int posicao) {
+void remover(int *vetor, int *tamanho, int posicao) {
   if (posicao < 0 || posicao >= *tamanho) {
     return;
   }
@@ -13,7 +13,7 @@ void remover(int* vetor, int* tamanho, int posicao) {
   (*tamanho)--;
 }
 
-void inserirElemento(int* vetor, int* tamanho, int tamanhoMax, int posicao, int valor) {
+void inserirElemento(int *vetor, int *tamanho, int tamanhoMax, int posicao, int valor) {
   if (*tamanho >= tamanhoMax) {
     return;
   }
