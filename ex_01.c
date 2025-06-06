@@ -27,19 +27,33 @@ void ordenar(int *a, int *b, int *c)
 
 int main(int argc, char *argv[])
 {
-  int a = 3, b = 2, c = 1;
+  int a, b, c;
 
-  printf("%d %d %d\n", a, b, c);
-  ordenar(&a, &b, &c);
-  printf("%d %d %d\n", a, b, c);
-
-  a = 1;
-  b = 3;
-  c = 2;
-
-  printf("%d %d %d\n", a, b, c);
+  scanf("%d %d %d", &a, &b, &c);
   ordenar(&a, &b, &c);
   printf("%d %d %d\n", a, b, c);
 
   return 0;
 }
+
+/*
+casos de teste
+
+1 2 3
+1 2 3
+
+10 30 20
+10 20 30
+
+21 31 11
+11 21 31
+
+22 12 32
+12 22 32
+
+33 23 13
+13 23 33
+
+34 14 24
+14 24 34
+*/
