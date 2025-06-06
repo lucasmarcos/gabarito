@@ -1,5 +1,17 @@
 #include <stdio.h>
 
+/*
+Implemente um sistema para gerenciar produtos de uma loja usando estruturas e ponteiros.
+
+Funções a implementar:
+
+\begin{itemize}
+\item Vender Produto
+\item Alterar Preço
+\item Calcular Total Geral
+\end{itemize}
+*/
+
 #define MAX_PRODUTOS 100
 #define MAX_NOME 50
 

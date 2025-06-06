@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// Implemente uma função que receba um ponteiro para um vetor de inteiros e seu tamanho (N), e modifique o vetor preenchendo-o com os primeiros N números da sequência de Fibonacci.
+
 void preencherFibonacci(int* vetor, int tamanho) {
   if (tamanho <= 0) {
     return;

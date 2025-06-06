@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// Implementar uma função que receba três ponteiros para inteiros e modifique os valores nos endereços apontados, organizando-os em ordem crescente.
+
 void trocar(int *a, int *b)
 {
   int temp;

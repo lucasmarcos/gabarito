@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// Implemente um programa que utilize estruturas para representar pontos e retângulos, e verifique se um ponto está dentro de retângulos específicos.
+
 typedef struct {
   double x;
   double y;

@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// Implementar uma função que busque um valor específico em um vetor de inteiros e retorne um ponteiro para a primeira ocorrência encontrada, ou NULL se o valor não for encontrado.
+
 int *procurar(int *vetor, int x)
 {
   for (int i = 0; i < 10; i++) {
