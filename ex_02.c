@@ -10,6 +10,7 @@ int *procurar(int *vetor, int x)
       return &vetor[i];
     }
   }
+  return NULL;
 }
 
 int main(int argc, char *argv[])
@@ -24,7 +25,19 @@ int main(int argc, char *argv[])
 
   scanf("%d", &x);
 
-  procurar(vetor, x);
+  int *r = procurar(vetor, x);
+
+  printf("%d", r - vetor);
 
   return 0;
 }
+
+/*
+casos de teste
+
+1 2 3 4 5 6 7 8 9 10
+5
+
+4
+
+*/

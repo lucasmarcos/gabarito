@@ -22,13 +22,32 @@ void preencherFibonacci(int* vetor, int tamanho) {
 
 int main(int argc, char *argv[])
 {
-  int vetor[25];
+  int vetor[1024];
 
-  preencherFibonacci(vetor, 25);
+  int x;
 
-  for (int i = 0; i < 25; i++) {
+  scanf("%d", &x);
+
+  preencherFibonacci(vetor, x);
+
+  for (int i = 0; i < x; i++) {
     printf("%d\n", vetor[i]);
   }
 
   return 0;
 }
+
+/*
+casos de teste
+10
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+*/
