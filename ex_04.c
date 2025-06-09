@@ -17,7 +17,7 @@ A função deve:
 \end{itemize}
 */
 
-int *buscar(int vetor[], int n, int x, int y) {
+int *buscar(int *vetor, int n, int x, int y) {
   if (x < 0 || x >= n) {
     return NULL;
   }
@@ -46,5 +46,13 @@ int *buscar(int vetor[], int n, int x, int y) {
 
 int main(int argc, char *argv[])
 {
+  int vetor[1024], n, x, y;
+  scanf("%d", &n);
+  scanf("%d", &x);
+  scanf("%d", &y);
+  for (int i = 0; i < n; i++) {
+    scanf("%d", &vetor[i]);
+  }
+  printf("%ld\n", buscar(vetor, n, x, y));
   return 0;
 }
