@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /*
 Implemente um sistema para gerenciar produtos de uma loja usando estruturas e ponteiros.

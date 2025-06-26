@@ -22,7 +22,7 @@ struct autor {
   char nome[MAX_NOME];
   char nacionalidade[MAX_NOME];
   int anoNascimento;
-}
+};
 
 struct livro {
   int id;
@@ -30,7 +30,7 @@ struct livro {
   int anoPublicacao;
   int numPaginas;
   struct autor *autor;
-}
+};
 
 int main(int argc, char *argv[])
 {
