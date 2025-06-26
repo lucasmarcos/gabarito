@@ -1,42 +1,59 @@
 #include <stdio.h>
-
-/*
-Implemente um sistema para gerenciar formas geométricas usando estruturas e ponteiros. O programa deve:
-
-\begin{itemize}
-\item Calcular Área
-\item Calcular Perímetro
-\end{itemize}
-*/
-
-// tipo = 1 retangulo, 2 circulo
+#include <math.h>
 
 struct forma {
   int tipo;
-  int altura;
-  int largura;
+  double altura;
+  double largura;
 };
 
-int calcular(struct forma *f)
-{
-  int res;
+double calcular(struct forma *f) {
+  double area;
 
   switch (f->tipo) {
     case 1:
-      res = f->altura * f->largura;
+      area = f->altura * f->largura;
       break;
     case 2:
-      res = -1;
+      area = M_PI * f->altura * f->altura;
       break;
     default:
-      res = -1;
+      area = -1;
       break;
   }
 
-  return res;
+  return area;
 }
 
-int main(int argc, char *argv[])
-{
+struct forma criar_retangulo(double altura, double largura) {
+  struct forma ret;
+  ret.tipo = 1;
+  ret.altura = altura;
+  ret.largura = largura;
+  return ret;
+}
+
+struct forma criar_circulo(double raio) {
+  struct forma circ;
+  circ.tipo = 2;
+  circ.altura = raio;
+  circ.largura = 0;
+  return circ;
+}
+
+int main(int argc, char *argv[]) {
+  double a, b, c;
+
+  scanf("%lf %lf", &a, &b);
+
+  struct forma retangulo = criar_retangulo(a, b);
+
+  scanf("%lf", &c);
+
+  struct forma circulo = criar_circulo(c);
+
+  printf("%lf\n", calcular(&retangulo));
+  printf("%lf\n", calcular(&circulo));
+
   return 0;
 }
