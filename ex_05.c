@@ -26,5 +26,11 @@ void remover(int *vetor, int *tamanho, int posicao) {
 
 int main(int argc, char *argv[])
 {
+  int vetor[] = {10, 20, 30, 40, 50, 0, 0, 0};
+  int tamanho = 5;
+  remover(vetor, &tamanho, 2);
+  for (int i = 0; i < tamanho; i++) {
+    printf("%d\n", vetor[i]);
+  }
   return 0;
 }

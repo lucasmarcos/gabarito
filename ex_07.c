@@ -2,59 +2,41 @@
 
 // Implemente um programa que utilize estruturas para representar pontos e retângulos, e verifique se um ponto está dentro de retângulos específicos.
 
-typedef struct {
-  double x;
-  double y;
-} Ponto;
+struct ponto {
+  float x;
+  float y;
+};
 
-typedef struct {
-  double x;
-  double y;
-  double largura;
-  double altura;
-} Retangulo;
+struct retangulo {
+  struct ponto inf_esq;
+  struct ponto sup_dir;
+};
 
-Ponto lerPonto() {
-  Ponto p;
-  scanf("%lf %lf", &p.x, &p.y);
-  return p;
+int pontoNoRetangulo(struct ponto p, struct retangulo r) {
+  return (p.x >= r.inf_esq.x && p.x <= r.sup_dir.x &&
+      p.y >= r.inf_esq.y && p.y <= r.sup_dir.y);
 }
 
-Retangulo lerRetangulo(int numero) {
-  Retangulo r;
-  scanf("%lf", &r.x);
-  scanf("%lf", &r.y);
-  scanf("%lf", &r.largura);
-  scanf("%lf", &r.altura);
-  return r;
+struct ponto criarPonto(float x, float y) {
+    struct ponto p;
+    p.x = x;
+    p.y = y;
+    return p;
 }
 
-int pontoNoRetangulo(Ponto p, Retangulo r) {
-  return (
-    p.x >= r.x &&
-    p.x <= r.x + r.largura &&
-    p.y >= r.y &&
-    p.y <= r.y + r.altura
-  );
-}
-
-Retangulo criarRetangulo(double x, double y, double largura, double altura) {
-  Retangulo r;
-  r.x = x;
-  r.y = y;
-  r.largura = largura;
-  r.altura = altura;
-  return r;
-}
-
-Ponto criarPonto(double x, double y) {
-  Ponto p;
-  p.x = x;
-  p.y = y;
-  return p;
+struct retangulo criarRetangulo(float x1, float y1, float x2, float y2) {
+    struct retangulo r;
+    r.inf_esq.x = (x1 < x2) ? x1 : x2;
+    r.inf_esq.y = (y1 < y2) ? y1 : y2;
+    r.sup_dir.x = (x1 > x2) ? x1 : x2;
+    r.sup_dir.y = (y1 > y2) ? y1 : y2;
+    return r;
 }
 
 int main(int argc, char *argv[])
 {
+  struct retangulo r = criarRetangulo(0, 0, 5, 3);
+  struct ponto p = criarPonto(2.5, 1.5);
+  printf("%d\n", pontoNoRetangulo(p, r));
   return 0;
 }
